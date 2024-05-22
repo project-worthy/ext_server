@@ -1,0 +1,13 @@
+.light {
+  --background: 255, 255, 255;
+  --primary: 20, 20, 20;
+  --secondary: 238, 238, 238;
+  --highlight: 235, 202, 93;
+}
+
+.dark {
+  --background: 20, 20, 20;
+  --primary: 255, 255, 255;
+  --secondary: 238, 238, 238;
+  --highlight: 213, 189, 109;
+}
