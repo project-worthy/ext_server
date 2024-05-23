@@ -4,8 +4,8 @@ import Fan from "../components/fan/Fan";
 function Home() {
   return (
     <div className="w-full flex-1 justify-center">
-      <div className="h-full w-full overflow-y-auto no-scrollbar relative snap-y">
-        <div className="h-full w-full grid justify-center content-center relative snap-start snap-proximity">
+      <div className="h-full w-full overflow-y-auto no-scrollbar relative snap-y snap-mandatory">
+        <div className="h-full w-full grid justify-center content-center relative snap-start">
           <Fan className="my-3" power={true} />
           <span
             className="text-primary text-5xl"
