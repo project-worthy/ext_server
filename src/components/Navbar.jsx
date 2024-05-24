@@ -1,5 +1,6 @@
 import { ReactComponent as WorthyLogo } from "../icons/logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { ButtonSx } from "../theme";
 
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
@@ -27,6 +28,7 @@ function Navbar() {
           variant="contained"
           onClick={handleLogin}
           className="bg-highlight"
+          sx={ButtonSx}
         >
           {text}
         </Button>
