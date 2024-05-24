@@ -12,12 +12,14 @@ function Login() {
     opacity: 0,
   });
   const [loginState, setLoginState] = useState(0);
+  const [loginBtnText, setLoginBtnText] = useState("다음");
   function loginHandler() {
     //TODO: 여기서 로그인 이메일 정보 가져오기
     const result = { status: true };
     if (result.status && loginState === 0) {
       setPasswordStyle({ maxHeight: "550px", opacity: 1 });
       setLoginState(loginState + 1);
+      setLoginBtnText("로그인");
     } else if (result.status && loginState === 1) {
       navigate("/20194043");
     }
@@ -25,7 +27,7 @@ function Login() {
   return (
     <div className="w-full h-full grid items-center">
       <section className="flex flex-col items-center">
-        <span className="text-4xl my-10">로그인</span>
+        <span className="text-4xl my-10 text-primary">로그인</span>
 
         <TextField
           label="ID"
@@ -47,10 +49,10 @@ function Login() {
           onClick={loginHandler}
           sx={ButtonSx}
         >
-          로그인
+          {loginBtnText}
         </Button>
 
-        <span>다른 방식으로 로그인</span>
+        <span className="text-primary my-4">다른 방식으로 로그인</span>
         <KakaoLogin />
       </section>
     </div>

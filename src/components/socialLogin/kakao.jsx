@@ -5,7 +5,10 @@ function KakaoLogin() {
     window.location.assign(link);
   }
   return (
-    <div className="rounded-[12px] bg-[#FEE500] p-[14px]" onClick={redirect}>
+    <div
+      className="rounded-[12px] bg-[#FEE500] p-[14px] my-4"
+      onClick={redirect}
+    >
       <KakaoLogo width={24} />
     </div>
   );
