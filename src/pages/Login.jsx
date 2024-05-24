@@ -1,12 +1,26 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import KakaoLogin from "../components/socialLogin/kakao";
+import { useState } from "react";
+import { TextFieldSx, ButtonSx } from "../theme";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.REACT_APP_REST_API_KEY}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=code`;
-
-  function redirect() {
-    window.location.assign(link);
+  const navigate = useNavigate();
+  const [passwordStyle, setPasswordStyle] = useState({
+    maxHeight: 0,
+    opacity: 0,
+  });
+  const [loginState, setLoginState] = useState(0);
+  function loginHandler() {
+    //TODO: 여기서 로그인 이메일 정보 가져오기
+    const result = { status: true };
+    if (result.status && loginState === 0) {
+      setPasswordStyle({ maxHeight: "550px", opacity: 1 });
+      setLoginState(loginState + 1);
+    } else if (result.status && loginState === 1) {
+      navigate("/20194043");
+    }
   }
   return (
     <div className="w-full h-full grid items-center">
@@ -16,35 +30,28 @@ function Login() {
         <TextField
           label="ID"
           variant="outlined"
-          className="w-1/5 min-w-72"
-          sx={{
-            "& label.Mui-focused": {
-              color: "rgba(var(--primary))",
-            },
-            "& .MuiInput-underline:after": {
-              borderBottomColor: "rgba(var(--highlight))",
-            },
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderColor: "rgba(var(--secondary))",
-              },
-              "&:hover fieldset": {
-                borderColor: "rgba(var(--highlight))",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "rgba(var(--highlight))",
-              },
-            },
-          }}
+          className="w-1/5 min-w-72 my-4 transition-all duration-1000"
+          sx={TextFieldSx}
         />
-        <Button variant="contained" className="my-5">
+        <TextField
+          label="password"
+          variant="outlined"
+          type="password"
+          className="w-1/5 min-w-72 my-4 transition-all duration-1000"
+          style={passwordStyle}
+          sx={TextFieldSx}
+        />
+        <Button
+          variant="contained"
+          className="my-5"
+          onClick={loginHandler}
+          sx={ButtonSx}
+        >
           로그인
         </Button>
 
         <span>다른 방식으로 로그인</span>
         <KakaoLogin />
-        <a onClick={redirect}>login with kakao</a>
-        {/* <a href="/20194043">this is going to redirect to internal server</a> */}
       </section>
     </div>
   );
