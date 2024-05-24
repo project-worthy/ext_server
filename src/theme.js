@@ -1,4 +1,7 @@
 export const TextFieldSx = {
+  "& input": {
+    color: "rgba(var(--secondary))",
+  },
   "& label": {
     color: "rgba(var(--secondary))",
   },
