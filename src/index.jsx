@@ -8,9 +8,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+/* prettier-ignore */
 root.render(
   <React.StrictMode>
-    <App className="light" />
+    <App className="dark" />
   </React.StrictMode>,
 );
 

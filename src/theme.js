@@ -1,4 +1,7 @@
 export const TextFieldSx = {
+  "& label": {
+    color: "rgba(var(--secondary))",
+  },
   "& label.Mui-focused": {
     color: "rgba(var(--primary))",
   },
