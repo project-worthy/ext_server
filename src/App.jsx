@@ -20,6 +20,7 @@ function App({ className }) {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Login />}></Route>
           <Route
             path="/auth/kakao/callback"
             element={<LoginCallback />}
