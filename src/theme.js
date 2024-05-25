@@ -31,3 +31,13 @@ export const ButtonSx = {
     backgroundColor: "rgba(var(--highlight))",
   },
 };
+
+export const ButtonOutlinedSx = {
+  color: "rgba(var(--highlight))",
+  borderColor: "rgba(var(--highlight))",
+  "&:hover": {
+    color: "rgba(var(--highlight))",
+    borderColor: "rgba(var(--highlight))",
+    backgroundColor: "rgba(var(--highlight),0.2)",
+  },
+};
