@@ -1,8 +1,11 @@
 # Project Worthy External Server
 
-## Available Scripts
+## HOW TO START WITH DEVELOPMENT MODE
 
-In the project directory, you can run:
+```bash
+npm i # npm install
+npm start # npm run start
+```
 
 ### `npm start`
 
@@ -11,3 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## HOW TO START WITH PRODUCTION MODE
+
+```bash
+npm i # npm install
+npm run build
+npx serve -s build -l [PORTNUM]
+```
