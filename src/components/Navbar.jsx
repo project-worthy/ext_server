@@ -6,16 +6,15 @@ import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 
 function Navbar() {
-  const [text, setText] = useState("");
+  const [display, setDisplay] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
   function handleLogin() {
-    if (location.pathname === "/") navigate("/login");
-    else if (location.pathname === "/login") navigate("/register");
+    navigate("/login");
   }
   useEffect(() => {
-    if (location.pathname === "/") setText("로그인");
-    else if (location.pathname === "/login") setText("회언가입");
+    if (location.pathname === "/") setDisplay(true);
+    else setDisplay(false);
   }, [location.pathname]);
   return (
     <nav className="flex justify-between items-center">
@@ -24,14 +23,16 @@ function Navbar() {
         onClick={() => navigate("/")}
       />
       <div className="w-auto my-3 mx-10">
-        <Button
-          variant="contained"
-          onClick={handleLogin}
-          className="bg-highlight"
-          sx={ButtonSx}
-        >
-          {text}
-        </Button>
+        {display && (
+          <Button
+            variant="contained"
+            onClick={handleLogin}
+            className="bg-highlight"
+            sx={ButtonSx}
+          >
+            로그인
+          </Button>
+        )}
       </div>
     </nav>
   );
