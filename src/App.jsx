@@ -4,6 +4,7 @@ import LoginCallback from "./api/loginCallback";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import cs from "./utils/class";
 
@@ -20,7 +21,7 @@ function App({ className }) {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
           <Route
             path="/auth/kakao/callback"
             element={<LoginCallback />}
