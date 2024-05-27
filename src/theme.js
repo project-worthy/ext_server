@@ -41,3 +41,9 @@ export const ButtonOutlinedSx = {
     backgroundColor: "rgba(var(--highlight),0.2)",
   },
 };
+
+export const TextFieldDigitSx = {
+  "& input": {
+    textAlign: "center",
+  },
+};
